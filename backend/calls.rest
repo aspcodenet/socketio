@@ -2,13 +2,13 @@
 GET http://localhost:3000/api/game
 
 ### update one
-PUT http://localhost:3000/api/game/m0dc6uqp2bohqpgd6ks3fw
+PUT http://localhost:3000/api/game/tl3oabnbkyhkaha8ifp10j
 Content-Type: application/json
 
 {
 
     "score1": 2,
-    "score2": 0
+    "score2": 1
 }
 
 

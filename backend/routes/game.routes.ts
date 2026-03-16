@@ -1,4 +1,5 @@
 import { Router,Request,Response } from "express";
+import { getIo } from "../socket";
 
 
 class Game{
@@ -45,6 +46,11 @@ gameRouter.put("/:id",(req:Request,res:Response)=>{
     }
     if(score2 !== undefined){   
         game.score2 = score2;
+    }
+    try{
+        getIo().to(id).emit('gameUpdate', game);
+    }catch(e){
+        // Socket.IO not initialized yet; ignore emit
     }
     res.json(game);
 });
